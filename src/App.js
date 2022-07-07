@@ -1,39 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  extendTheme,
   ChakraProvider,
   Box,
   Text,
-  Link,
   VStack,
-  Code,
   Grid,
-  theme,
+  Button,
+  useDisclosure
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import NewItineraryForm from './new-itinerary'
+import ItineraryList from './itinerary-list'
+
+const colors = {
+  'app-background': {
+    light: '#9078C0'
+  } 
+}
+
+const theme = extendTheme({ colors })
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [ itineraryList, setItineraryList ] = useState([])
+
+  const removeItinerary = (itName) => {
+    console.log(itName)
+    if (itineraryList.length === 1) {
+      setItineraryList([])
+    } else {
+      setItineraryList(itineraryList.filter(it => it.tripName === itName))
+    }
+  }
+
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
+      <Box minW='100%' textAlign="center" fontSize="xl">
+        <Grid minW='200vh' minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
             <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
+              Welcome to your personal travel planner! 
+              { itineraryList.length > 0 ? ' Here are your current itineraries.' : ' Start by adding a new itinerary.' }
             </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
+            <ItineraryList 
+              itineraryList={itineraryList} 
+              removeItinerary={(value) => removeItinerary(value)} 
+            />
+
+            <Button colorScheme='purple' onClick={onOpen}>
+              Add New Itinerary
+            </Button>
           </VStack>
         </Grid>
+        <NewItineraryForm 
+          isOpen={isOpen} 
+          onOpen={onOpen} 
+          onClose={onClose} 
+          onSubmit={(it) => setItineraryList([...itineraryList, it])} 
+          itineraryList={itineraryList}
+        />
       </Box>
     </ChakraProvider>
   );
