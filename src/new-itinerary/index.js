@@ -77,12 +77,14 @@ export const NewItineraryForm = ({isOpen, onClose, onOpen, onSubmit, itineraryLi
                 }
               </InputGroup>
 
-                <HStack>
+                <HStack paddingBottom='1rem'>
                   <Grid templateColumns='repeat(5, 1fr)' gap={6} pt='3' >
                     <GridItem w='100%' h='10'>
+                      Start Date
                       <Input value={startDate} type='date' placeholder='Start Date' onChange={(event) => setStartDate(event.target.value)} />
                     </GridItem>
                     <GridItem w='100%' h='10'>
+                      End Date
                       <Input value={endDate} type='date' placeholder='End Date' onChange={(event) => setEndDate(event.target.value)} />
                     </GridItem>
                   </Grid>

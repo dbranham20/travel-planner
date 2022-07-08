@@ -1,0 +1,422 @@
+[
+  {
+    "id": "UA",
+    "lcc": "0",
+    "name": "United Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/UA.png"
+  },
+  {
+    "id": "SV",
+    "lcc": "0",
+    "name": "Saudi Arabian Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/SV.png"
+  },
+  {
+    "id": "LH",
+    "lcc": "0",
+    "name": "Lufthansa",
+    "logo": "https://images.kiwi.com/airlines/64/LH.png"
+  },
+  {
+    "id": "QR",
+    "lcc": "0",
+    "name": "Qatar Airways",
+    "logo": "https://images.kiwi.com/airlines/64/QR.png"
+  },
+  {
+    "id": "MU",
+    "lcc": "0",
+    "name": "China Eastern Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/MU.png"
+  },
+  {
+    "id": "PK",
+    "lcc": "0",
+    "name": "Pakistan International Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/PK.png"
+  },
+  {
+    "id": "NM",
+    "lcc": "0",
+    "name": "Air Madrid",
+    "logo": "https://images.kiwi.com/airlines/64/NM.png"
+  },
+  {
+    "id": "FJ",
+    "lcc": "0",
+    "name": "Fiji Airways",
+    "logo": "https://images.kiwi.com/airlines/64/FJ.png"
+  },
+  {
+    "id": "AS",
+    "lcc": "0",
+    "name": "Alaska Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/AS.png"
+  },
+  {
+    "id": "AC",
+    "lcc": "0",
+    "name": "Air Canada",
+    "logo": "https://images.kiwi.com/airlines/64/AC.png"
+  },
+  {
+    "id": "PS",
+    "lcc": "0",
+    "name": "Ukraine International Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/PS.png"
+  },
+  {
+    "id": "EY",
+    "lcc": "0",
+    "name": "Etihad Airways",
+    "logo": "https://images.kiwi.com/airlines/64/EY.png"
+  },
+  {
+    "id": "RA",
+    "lcc": "0",
+    "name": "Nepal Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/RA.png"
+  },
+  {
+    "id": "KE",
+    "lcc": "0",
+    "name": "Korean Air",
+    "logo": "https://images.kiwi.com/airlines/64/KE.png"
+  },
+  {
+    "id": "EK",
+    "lcc": "0",
+    "name": "Emirates",
+    "logo": "https://images.kiwi.com/airlines/64/EK.png"
+  },
+  {
+    "id": "CI",
+    "lcc": "0",
+    "name": "China Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/CI.png"
+  },
+  {
+    "id": "CZ",
+    "lcc": "0",
+    "name": "China Southern Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/CZ.png"
+  },
+  {
+    "id": "AA",
+    "lcc": "0",
+    "name": "American Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/AA.png"
+  },
+  {
+    "id": "FR",
+    "lcc": "1",
+    "name": "Ryanair",
+    "logo": "https://images.kiwi.com/airlines/64/FR.png"
+  },
+  {
+    "id": "NK",
+    "lcc": "1",
+    "name": "Spirit Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/NK.png"
+  },
+  {
+    "id": "A3",
+    "lcc": "1",
+    "name": "Aegean",
+    "logo": "https://images.kiwi.com/airlines/64/A3.png"
+  },
+  {
+    "id": "SM",
+    "lcc": "1",
+    "name": "Air Cairo",
+    "logo": "https://images.kiwi.com/airlines/64/SM.png"
+  },
+  {
+    "id": "J2",
+    "lcc": "0",
+    "name": "Azerbaijan Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/J2.png"
+  },
+  {
+    "id": "FI",
+    "lcc": "0",
+    "name": "Icelandair",
+    "logo": "https://images.kiwi.com/airlines/64/FI.png"
+  },
+  {
+    "id": "AV",
+    "lcc": "0",
+    "name": "Avianca",
+    "logo": "https://images.kiwi.com/airlines/64/AV.png"
+  },
+  {
+    "id": "HX",
+    "lcc": "1",
+    "name": "Hong Kong Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/HX.png"
+  },
+  {
+    "id": "KQ",
+    "lcc": "0",
+    "name": "Kenya Airways",
+    "logo": "https://images.kiwi.com/airlines/64/KQ.png"
+  },
+  {
+    "id": "KL",
+    "lcc": "0",
+    "name": "KLM Royal Dutch Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/KL.png"
+  },
+  {
+    "id": "IX",
+    "lcc": "1",
+    "name": "Air India Express",
+    "logo": "https://images.kiwi.com/airlines/64/IX.png"
+  },
+  {
+    "id": "LX",
+    "lcc": "0",
+    "name": "Swiss International Air Lines",
+    "logo": "https://images.kiwi.com/airlines/64/LX.png"
+  },
+  {
+    "id": "CA",
+    "lcc": "0",
+    "name": "Air China",
+    "logo": "https://images.kiwi.com/airlines/64/CA.png"
+  },
+  {
+    "id": "NZ",
+    "lcc": "1",
+    "name": "Air New Zealand",
+    "logo": "https://images.kiwi.com/airlines/64/NZ.png"
+  },
+  {
+    "id": "KX",
+    "lcc": "0",
+    "name": "Cayman Airways",
+    "logo": "https://images.kiwi.com/airlines/64/KX.png"
+  },
+  {
+    "id": "B6",
+    "lcc": "1",
+    "name": "JetBlue Airways",
+    "logo": "https://images.kiwi.com/airlines/64/B6.png"
+  },
+  {
+    "id": "OZ",
+    "lcc": "0",
+    "name": "Asiana Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/OZ.png"
+  },
+  {
+    "id": "KU",
+    "lcc": "0",
+    "name": "Kuwait Airways",
+    "logo": "https://images.kiwi.com/airlines/64/KU.png"
+  },
+  {
+    "id": "AF",
+    "lcc": "0",
+    "name": "Air France",
+    "logo": "https://images.kiwi.com/airlines/64/AF.png"
+  },
+  {
+    "id": "JL",
+    "lcc": "0",
+    "name": "Japan Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/JL.png"
+  },
+  {
+    "id": "SN",
+    "lcc": "0",
+    "name": "Brussels Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/SN.png"
+  },
+  {
+    "id": "IB",
+    "lcc": "0",
+    "name": "Iberia Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/IB.png"
+  },
+  {
+    "id": "FZ",
+    "lcc": "1",
+    "name": "Fly Dubai",
+    "logo": "https://images.kiwi.com/airlines/64/FZ.png"
+  },
+  {
+    "id": "TK",
+    "lcc": "0",
+    "name": "Turkish Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/TK.png"
+  },
+  {
+    "id": "D8",
+    "lcc": "0",
+    "name": "Norwegian International",
+    "logo": "https://images.kiwi.com/airlines/64/D8.png"
+  },
+  {
+    "id": "CN",
+    "lcc": "0",
+    "name": "Canadian National Airways",
+    "logo": "https://images.kiwi.com/airlines/64/CN.png"
+  },
+  {
+    "id": "F9",
+    "lcc": "1",
+    "name": "Frontier Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/F9.png"
+  },
+  {
+    "id": "J9",
+    "lcc": "1",
+    "name": "Jazeera Airways",
+    "logo": "https://images.kiwi.com/airlines/64/J9.png"
+  },
+  {
+    "id": "Y4",
+    "lcc": "1",
+    "name": "Volaris",
+    "logo": "https://images.kiwi.com/airlines/64/Y4.png"
+  },
+  {
+    "id": "AM",
+    "lcc": "0",
+    "name": "AeroMéxico",
+    "logo": "https://images.kiwi.com/airlines/64/AM.png"
+  },
+  {
+    "id": "QZ",
+    "lcc": "0",
+    "name": "Indonesia AirAsia",
+    "logo": "https://images.kiwi.com/airlines/64/QZ.png"
+  },
+  {
+    "id": "U2",
+    "lcc": "1",
+    "name": "easyJet",
+    "logo": "https://images.kiwi.com/airlines/64/U2.png"
+  },
+  {
+    "id": "3K",
+    "lcc": "0",
+    "name": "Jetstar Asia Airways",
+    "logo": "https://images.kiwi.com/airlines/64/3K.png"
+  },
+  {
+    "id": "DL",
+    "lcc": "0",
+    "name": "Delta Air Lines",
+    "logo": "https://images.kiwi.com/airlines/64/DL.png"
+  },
+  {
+    "id": "HA",
+    "lcc": "0",
+    "name": "Hawaiian Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/HA.png"
+  },
+  {
+    "id": "AK",
+    "lcc": "1",
+    "name": "AirAsia",
+    "logo": "https://images.kiwi.com/airlines/64/AK.png"
+  },
+  {
+    "id": "SQ",
+    "lcc": "0",
+    "name": "Singapore Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/SQ.png"
+  },
+  {
+    "id": "BA",
+    "lcc": "0",
+    "name": "British Airways",
+    "logo": "https://images.kiwi.com/airlines/64/BA.png"
+  },
+  {
+    "id": "SU",
+    "lcc": "0",
+    "name": "Aeroflot Russian Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/SU.png"
+  },
+  {
+    "id": "BW",
+    "lcc": "0",
+    "name": "Caribbean Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/BW.png"
+  },
+  {
+    "id": "ET",
+    "lcc": "0",
+    "name": "Ethiopian Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/ET.png"
+  },
+  {
+    "id": "I3",
+    "lcc": "None",
+    "name": "ATA Airlines (Iran)",
+    "logo": "https://images.kiwi.com/airlines/64/I3.png"
+  },
+  {
+    "id": "BT",
+    "lcc": "1",
+    "name": "airBaltic",
+    "logo": "https://images.kiwi.com/airlines/64/BT.png"
+  },
+  {
+    "id": "GL",
+    "lcc": "0",
+    "name": "Air Greenland",
+    "logo": "https://images.kiwi.com/airlines/64/GL.png"
+  },
+  {
+    "id": "AG",
+    "lcc": "0",
+    "name": "Aruba Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/AG.png"
+  },
+  {
+    "id": "PR",
+    "lcc": "0",
+    "name": "Philippine Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/PR.png"
+  },
+  {
+    "id": "ZK",
+    "lcc": "0",
+    "name": "Great Lakes Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/ZK.png"
+  },
+  {
+    "id": "MH",
+    "lcc": "1",
+    "name": "Malaysia Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/MH.png"
+  },
+  {
+    "id": "VS",
+    "lcc": "0",
+    "name": "Virgin Atlantic Airways",
+    "logo": "https://images.kiwi.com/airlines/64/VS.png"
+  },
+  {
+    "id": "NH",
+    "lcc": "0",
+    "name": "All Nippon Airways",
+    "logo": "https://images.kiwi.com/airlines/64/NH.png"
+  },
+  {
+    "id": "WD",
+    "lcc": "0",
+    "name": "Amsterdam Airlines",
+    "logo": "https://images.kiwi.com/airlines/64/WD.png"
+  },
+  {
+    "id": "RS",
+    "lcc": "0",
+    "name": "Air Seoul",
+    "logo": "https://images.kiwi.com/airlines/64/RS.png"
+  }
+]

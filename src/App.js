@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  extendTheme,
   ChakraProvider,
   Box,
   Text,
@@ -12,25 +11,17 @@ import {
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import NewItineraryForm from './new-itinerary'
 import ItineraryList from './itinerary-list'
-
-const colors = {
-  'app-background': {
-    light: '#9078C0'
-  } 
-}
-
-const theme = extendTheme({ colors })
+import theme from './themeExtension'
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [ itineraryList, setItineraryList ] = useState([])
 
   const removeItinerary = (itName) => {
-    console.log(itName)
     if (itineraryList.length === 1) {
       setItineraryList([])
     } else {
-      setItineraryList(itineraryList.filter(it => it.tripName === itName))
+      setItineraryList(itineraryList.filter(it => it.tripName !== itName))
     }
   }
 
