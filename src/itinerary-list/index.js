@@ -1,22 +1,27 @@
 import React from 'react'
 import {
-  Accordion
+	Accordion
 } from '@chakra-ui/react'
+import PropTypes from 'prop-types'
 import WrappedAccordionItem from './accordion-item'
 
 
-export const ItineraryList = ({ itineraryList, removeItinerary }) => {
+export const ItineraryList = ({ dispatch, itineraries }) => {
+	console.log(itineraries)
+	return (
+		<Accordion minW='40%' allowToggle>
+			{
+				itineraries && itineraries.map((it) => (
+					<WrappedAccordionItem dispatch={dispatch} itinerary={it} key={it.id} id={it.id}  />
+				))
+			}
+		</Accordion>
+	)
+}
 
-  return (
-    <Accordion minW='40%' allowToggle>
-      {
-        itineraryList && itineraryList.map((it) => (
-            <WrappedAccordionItem itinerary={it} removeItinerary={removeItinerary}/>
-          )
-        )
-      }
-    </Accordion>
-  )
+ItineraryList.propTypes = {
+	itineraries: PropTypes.object,
+	dispatch: PropTypes.func
 }
 
 export default ItineraryList
