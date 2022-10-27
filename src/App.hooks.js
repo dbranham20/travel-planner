@@ -42,11 +42,6 @@ export const useItinerary = () => {
 
 	const [itineraries, dispatch] = useReducer(reducer, [])
 
-	useEffect(() => {
-		console.log(itineraries)
-	}, [itineraries])
-
-
 	return {
 		itineraries,
 		dispatch

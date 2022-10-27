@@ -15,6 +15,7 @@ import {  ITINERARY_REMOVE } from '../App.hooks'
 
 const WrappedAccordionItem = ({ dispatch, itinerary, id }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure()
+
 	const dateFormat = (startDate, endDate) => {
 		const startDateObj = new Date(startDate)
 		const endDateObj = new Date(endDate)
@@ -50,7 +51,7 @@ const WrappedAccordionItem = ({ dispatch, itinerary, id }) => {
 				<Box display='flex' justifyContent='flex-end'>
 					<i>{itinerary.events.length} events</i>
 					<Button marginLeft='1rem' marginRight='1rem' size='sm' colorScheme='purple' onClick={onOpen} >
-            Add Details
+						{itinerary.events.length > 0 ? 'Edit Details' : 'Add Details' }
 					</Button>
 					<Button size='sm' variant='outline' colorScheme='red' onClick={() => dispatch({type: ITINERARY_REMOVE, id: id})}>
             Delete

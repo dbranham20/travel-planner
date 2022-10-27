@@ -19,33 +19,22 @@ import {
 } from '@chakra-ui/react'
 import { format } from 'date-fns'
 import PropTypes from 'prop-types'
-import useAirlines from './hooks'
+import { useAirlines, useEvents, EVENTS_ADD, EVENTS_EDIT, EVENTS_REMOVE } from './hooks'
 import EventInputs from './components/event-inputs'
 import { ITINERARY_EDIT } from '../App.hooks'
 
 const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 	const { airlines } = useAirlines()
-	const [eventList, setEventList] = useState([])
+	const { events, eventsDispatch } = useEvents()
+
 	const btnRef = React.useRef()
 
 	const dateFormat = (date) => {
 		return format(new Date(date), 'MMMM, do yyyy')
 	}
 
-	const handleRemove = () => {
-		let newList = eventList
-		newList.splice(-1)
-		setEventList(newList)
-	}
-
-	const handleEdit = (event) => {
-		let newList = eventList
-		const index = newList.findIndex(nl => nl.id === event.id)
-		newList[index] = {...event}
-	}
-
 	const handleEditItinerary = () => {
-		dispatch({type: ITINERARY_EDIT, itinerary: {...itinerary, events: eventList}})
+		dispatch({type: ITINERARY_EDIT, itinerary: {...itinerary, events: events}})
 		onClose()
 	}
 
@@ -86,11 +75,11 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 						<Heading display='flex' justifyContent='center' paddingTop='2rem' size='md'>Trip Timeline</Heading>
 						<VStack paddingTop='1rem'>
 							{
-								eventList && eventList.map((e, index) => (
-									<VStack key={index}>
-										<EventInputs event={e} setEvent={() => handleEdit(e)}/>
+								events && events.map((e, index) => (
+									<VStack key={e.id}>
+										<EventInputs event={e} setEvent={(editedEvent) => eventsDispatch({type: EVENTS_EDIT, event: editedEvent})}/>
 										{
-											index !== eventList.length - 1 &&
+											index !== events.length - 1 &&
                         <Center height='50px'>
                         	<Divider  orientation='vertical' />
                         </Center>
@@ -100,10 +89,10 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 							}
 						</VStack>
 						<HStack paddingTop='3rem' justifyContent='flex-end'>
-							<Button onClick={() => setEventList([...eventList, {id: Math.floor(Math.random() * 100), eventName: '', date: ''}])}>
+							<Button onClick={() => eventsDispatch({type: EVENTS_ADD, numEvents: events.length})}>
                 Add Event
 							</Button>
-							<Button color='red' onClick={() => handleRemove()}>
+							<Button color='red' onClick={() => eventsDispatch({type: EVENTS_REMOVE, id: events.length})}>
 								Remove Event
 							</Button>
 						</HStack>
@@ -113,7 +102,9 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 						<Button variant='outline' mr={3} onClick={onClose}>
               Cancel
 						</Button>
-						<Button colorScheme='purple' onClick={() => handleEditItinerary()}>Save</Button>
+						<Button colorScheme='purple' onClick={() => handleEditItinerary()}>
+							Save
+						</Button>
 					</DrawerFooter>
 				</DrawerContent>
 			</Drawer>

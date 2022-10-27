@@ -8,10 +8,11 @@ import PropTypes from 'prop-types'
 
 const EventInputs = ({ setEvent, event }) => {
 
+	console.log(event)
 	return (
 		<HStack>
-			<Input onChange={(input) => setEvent({...event, eventName: input.target.value})} />
-			<Input type='datetime-local' onChange={(input) => setEvent({...event, date: input.target.value})} />
+			<Input onChange={(input) => setEvent({...event, description: input.target.value})} value={event?.eventName} />
+			<Input type='datetime-local' onChange={(input) => setEvent({...event, datetime: input.target.value})} value={event?.date} />
 		</HStack> 
 	)
 }

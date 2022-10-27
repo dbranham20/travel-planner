@@ -20,7 +20,7 @@ export const ItineraryList = ({ dispatch, itineraries }) => {
 }
 
 ItineraryList.propTypes = {
-	itineraries: PropTypes.object,
+	itineraries: PropTypes.array,
 	dispatch: PropTypes.func
 }
 
