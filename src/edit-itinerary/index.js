@@ -26,6 +26,8 @@ import { ITINERARY_EDIT } from '../App.hooks'
 const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 	const { airlines } = useAirlines()
 	const { events, eventsDispatch } = useEvents()
+	const [airline, setAirline] = useState(itinerary.airline || '')
+	const [flightNum, setFlightNum] = useState(itinerary.flightNum || '')
 
 	const btnRef = React.useRef()
 
@@ -34,7 +36,7 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 	}
 
 	const handleEditItinerary = () => {
-		dispatch({type: ITINERARY_EDIT, itinerary: {...itinerary, events: events}})
+		dispatch({type: ITINERARY_EDIT, itinerary: {...itinerary, events: events, airline, flightNum}})
 		onClose()
 	}
 
@@ -58,7 +60,7 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 					</Box>
 					<HStack width='90%' display='flex' justifyContent='space-around' paddingTop='1rem' paddingLeft='1rem'>
 						<VStack>
-							<Select variant='outline' placeholder='Airline' focusBorderColor='purple' >
+							<Select variant='outline' placeholder='Airline' focusBorderColor='purple' onChange={(option => setAirline(option.target.value))} selection={airline}>
 								{
 									airlines && airlines.map((a) => (
 										<option key={a.id} value={a.id}>{a.name}</option>
@@ -67,7 +69,7 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 							</Select>
 						</VStack>
 						<VStack>
-							<Input variant='outline' placeholder='Flight Number' focusBorderColor='purple' />
+							<Input variant='outline' placeholder='Flight Number' focusBorderColor='purple' onChange={(input) => setFlightNum(input.target.value)} value={flightNum} />
 						</VStack>
 					</HStack>
 					<Divider paddingTop='1rem'/>
@@ -77,7 +79,7 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 							{
 								events && events.map((e, index) => (
 									<VStack key={e.id}>
-										<EventInputs event={e} setEvent={(editedEvent) => eventsDispatch({type: EVENTS_EDIT, event: editedEvent})}/>
+										<EventInputs event={e} setEvent={(editedEvent) => eventsDispatch({type: EVENTS_EDIT, event: editedEvent})} removeEvent={(id) => eventsDispatch({type: EVENTS_REMOVE, id: id })}/>
 										{
 											index !== events.length - 1 &&
                         <Center height='50px'>
@@ -88,13 +90,15 @@ const EditItinerary = ({ itinerary, isOpen, onClose, dispatch }) => {
 								))
 							}
 						</VStack>
-						<HStack paddingTop='3rem' justifyContent='flex-end'>
-							<Button onClick={() => eventsDispatch({type: EVENTS_ADD, numEvents: events.length})}>
-                Add Event
+						<HStack paddingTop='3rem' justifyContent='space-around'>
+							<Button size='sm' colorScheme='purple' onClick={() => eventsDispatch({type: EVENTS_ADD})}>
+								Add Event
 							</Button>
-							<Button color='red' onClick={() => eventsDispatch({type: EVENTS_REMOVE, id: events.length})}>
+							{/* Add Event
+							</Button> */}
+							{/* <Button color='red' onClick={() => eventsDispatch({type: EVENTS_REMOVE, id: events.length})}>
 								Remove Event
-							</Button>
+							</Button> */}
 						</HStack>
 					</DrawerBody>
 

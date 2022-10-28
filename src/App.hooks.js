@@ -4,13 +4,16 @@ import { v4 as uuidv4 } from 'uuid'
 
 
 export const useItinerary = () => {
-	
+
 	const addNewItinerary = (itinerary) => {
+		console.log(itinerary)
 		return {
 			id: uuidv4(),
 			events: [],
 			airline: '',
 			flightNum: '',
+			startDate: '',
+			endDate: '',
 			...itinerary
 		}
 	}
@@ -41,6 +44,13 @@ export const useItinerary = () => {
 	}
 
 	const [itineraries, dispatch] = useReducer(reducer, [])
+
+	// TODO - remove this test data
+	useEffect(() => {
+		if (itineraries.length === 0) {
+			dispatch({type: ITINERARY_ADD, itinerary: {endDate: '2022-10-31', startDate: '2022-09-26', tripName: 'Test Trip'}})
+		}
+	}, [])
 
 	return {
 		itineraries,

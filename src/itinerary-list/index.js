@@ -12,7 +12,7 @@ export const ItineraryList = ({ dispatch, itineraries }) => {
 		<Accordion minW='40%' allowToggle>
 			{
 				itineraries && itineraries.map((it) => (
-					<WrappedAccordionItem dispatch={dispatch} itinerary={it} key={it.id} id={it.id}  />
+					<WrappedAccordionItem dispatch={dispatch} itinerary={it} key={it.id} id={it.id} />
 				))
 			}
 		</Accordion>

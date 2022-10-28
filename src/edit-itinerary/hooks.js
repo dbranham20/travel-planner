@@ -17,18 +17,18 @@ export const useAirlines = () => {
 }
 
 export const useEvents = () => {
-	const addEvent = (numEvents) => {
+	const [eventNum, setEventNum] = useState(0)
+
+	const addEvent = () => {
+		setEventNum((num) => num + 1)
 		return {
-			id: numEvents,
+			id: eventNum,
 			datetime: '',
 			description: ''
 		}
 	}
 
-	const removeEvent = (currentEventList, id) => {
-		return currentEventList.filter(it => it.id !== id)
-
-	}
+	const removeEvent = (currentEventList, id) => currentEventList.filter(it => it.id !== id)
 
 	const editEvent = (currentEventList, editedEvent) => {
 		const tempList = currentEventList
@@ -41,7 +41,7 @@ export const useEvents = () => {
 	const reducer = (state, action) => {
 		switch (action.type) {
 		case EVENTS_ADD:
-			var newEvent = addEvent(action.numEvents)
+			var newEvent = addEvent()
 			return [...state, newEvent]
 		case EVENTS_REMOVE:
 			return removeEvent(state, action.id)
