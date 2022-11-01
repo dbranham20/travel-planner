@@ -5,18 +5,15 @@ import { v4 as uuidv4 } from 'uuid'
 
 export const useItinerary = () => {
 
-	const addNewItinerary = (itinerary) => {
-		console.log(itinerary)
-		return {
-			id: uuidv4(),
-			events: [],
-			airline: '',
-			flightNum: '',
-			startDate: '',
-			endDate: '',
-			...itinerary
-		}
-	}
+	const addNewItinerary = (itinerary) =>  ({
+		id: uuidv4(),
+		events: [],
+		airline: '',
+		flightNum: '',
+		startDate: '',
+		endDate: '',
+		...itinerary
+	})
 
 	const removeItinerary = (currentItList, id) => {
 		return currentItList.filter(it => it.id !== id)

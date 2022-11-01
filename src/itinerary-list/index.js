@@ -7,7 +7,6 @@ import WrappedAccordionItem from './accordion-item'
 
 
 export const ItineraryList = ({ dispatch, itineraries }) => {
-	console.log(itineraries)
 	return (
 		<Accordion minW='40%' allowToggle>
 			{

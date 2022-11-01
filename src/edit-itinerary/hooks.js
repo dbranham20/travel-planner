@@ -16,45 +16,50 @@ export const useAirlines = () => {
 	}
 }
 
-export const useEvents = () => {
+export const useEvents = (currentEvents) => {
 	const [eventNum, setEventNum] = useState(0)
+	const [events, setEvents] = useState(currentEvents)
 
 	const addEvent = () => {
 		setEventNum((num) => num + 1)
-		return {
-			id: eventNum,
-			datetime: '',
-			description: ''
-		}
+		setEvents((events) => [...events, 
+			{
+				id: eventNum,
+				datetime: '',
+				description: ''
+			}
+		])
 	}
 
-	const removeEvent = (currentEventList, id) => currentEventList.filter(it => it.id !== id)
+	const removeEvent = (id) => events.filter(it => it.id !== id)
 
-	const editEvent = (currentEventList, editedEvent) => {
-		const tempList = currentEventList
-		const objIndex = currentEventList.findIndex((obj => obj.id === editedEvent.id))
-		tempList[objIndex] = { ...tempList[objIndex], ...editedEvent }
-		return tempList
+	const editEvent = (editedEvent) => {
+		const tempList = events
+		const objIndex = events.findIndex((obj => obj.id === editedEvent.id))
+		tempList[objIndex] = editedEvent
+		setEvents(tempList)
 	}
 
 
-	const reducer = (state, action) => {
-		switch (action.type) {
-		case EVENTS_ADD:
-			var newEvent = addEvent()
-			return [...state, newEvent]
-		case EVENTS_REMOVE:
-			return removeEvent(state, action.id)
-		case EVENTS_EDIT:
-			return editEvent(state, action.event)
-		default:
-			throw new Error(`Invalid Action '${action.type}' Provided`)
-		}
-	}
-	const [events, eventsDispatch] = useReducer(reducer, [])
+	// const reducer = (state, action) => {
+	// 	switch (action.type) {
+	// 	case EVENTS_ADD:
+	// 		var newEvent = addEvent()
+	// 		return [...state, newEvent]
+	// 	case EVENTS_REMOVE:
+	// 		return removeEvent(state, action.id)
+	// 	case EVENTS_EDIT:
+	// 		return editEvent(state, action.event)
+	// 	default:
+	// 		throw new Error(`Invalid Action '${action.type}' Provided`)
+	// 	}
+	// }
+	// const [events, eventsDispatch] = useReducer(reducer, [])
 
 	return {
-		eventsDispatch,
+		addEvent,
+		removeEvent,
+		editEvent,
 		events
 	}
 }

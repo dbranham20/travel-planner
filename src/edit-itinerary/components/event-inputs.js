@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
+import { debounce } from 'lodash'
 
 import {
 	Input,
@@ -7,21 +8,34 @@ import {
 import PropTypes from 'prop-types'
 import { DeleteIcon } from '@chakra-ui/icons'
 
-const EventInputs = ({ setEvent, event, removeEvent }) => {
+const EventInputs = ({ id, removeEvent, description, datetime }) => {
+	const [currDescription, setCurrDescription] = useState(description || '')
+	const [currDatetime, setCurrDatetime] = useState(datetime || '')
+	const onChangeDesc = useCallback(value => request(value), [])
 
-	console.log(event)
+	const request = debounce(e => {
+		console.log('saving', e.target.value)
+		setCurrDescription(description)
+	}, 1000)
+
+	const onChangeDate = e => {
+		setCurrDatetime(e.target.value)
+	}
+
 	return (
 		<HStack>
-			<Input onChange={(input) => setEvent({...event, description: input.target.value})} value={event.description} />
-			<Input type='datetime-local' onChange={(input) => setEvent({...event, datetime: input.target.value})} value={event.datetime} />
-			<DeleteIcon color='red' onClick={() => removeEvent(event.id)} />
+			<Input onChange={onChangeDesc} value={currDescription} />
+			<Input type='datetime-local' onChange={onChangeDate} value={currDatetime} />
+			<DeleteIcon color='red' onClick={() => removeEvent(id)} />
 		</HStack> 
 	)
 }
 
 EventInputs.propTypes = {
 	setEvent: PropTypes.func,
-	event: PropTypes.object,
+	description: PropTypes.string,
+	datetime: PropTypes.string,
+	id: PropTypes.number,
 	removeEvent: PropTypes.func
 }
 
